@@ -13,6 +13,13 @@ export function Main () {
 
     const [message, setMessage] = useState("")
 
+    const [cards, setCards] = useState([
+        {
+            name: "Fulano",
+            message: "Hi there, it works!",
+        }
+    ])
+
     const onChangeInput = (event) => {
         setMessage(event.target.value)
     }
@@ -20,23 +27,29 @@ export function Main () {
     const onKeyDownInput = (event) => {
         if(event.key === "Enter") {
             console.log(message)
+            let copyMessage = [...cards]
+            copyMessage.push(message)
+            setCards(copyMessage)
             setMessage("")
         }
     }
 
     return (
-        <>
-    <GlobalStyleMain>
-        <Card 
-        message={message}
-        />
-    </GlobalStyleMain>
+    <>
+        <GlobalStyleMain>
+            {cards.map((card, index) => {
+                return <Card 
+                key={index}
+                card={card}
+                />
+            })}
+        </GlobalStyleMain>
         <InputArea>
             <SideIcon src={smiley} alt="Smiley-Icon"/>
             <InputMessage onKeyDown={onKeyDownInput} value={message} onChange={onChangeInput} type={"text"} placeholder="Type a message" />
             <SideIcon src={paperclip} alt="Paperclip-icon" />
             <Button ><img src={microphone} alt="Mic-Icon" /></Button>
         </InputArea>
-        </>
+    </>
     )
 }

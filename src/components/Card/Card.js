@@ -7,8 +7,8 @@ export function Card (props) {
     return (
         <GlobalStyleCard>
         <CardMessage>
-            <NameUser>Lucas</NameUser>
-            <MessageUser>Hello World!</MessageUser>
+            <NameUser>{props.card.name}</NameUser>
+            <MessageUser>{props.card.message}</MessageUser>
             <TimeSend>20:00<TickGreen src={tickgreen} alt="tick-green" /></TimeSend>
         </CardMessage>
         </GlobalStyleCard>
