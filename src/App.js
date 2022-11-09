@@ -1,4 +1,6 @@
 import React from "react";
+import {useState} from 'react';
+
 import styled, { createGlobalStyle } from "styled-components";
 
 import { Header } from "./components/Header/Header";
@@ -22,12 +24,21 @@ const Container = styled.section `
 
 
 function App() {
+
+  const [user, setUser] = useState("")
+
   return (
   <>
   <GlobalStyles />
   <Container>
-  <Header />
-  <Main />
+  <Header
+  user={user}
+  setUser={setUser}
+  />
+
+  <Main 
+  user={user}
+  />
   </Container>
   </>
   )

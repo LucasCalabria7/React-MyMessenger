@@ -1,4 +1,6 @@
 import React from "react";
+import {useState} from 'react';
+
 import {HeaderGlobalStyle, ProfileArea, ButtonsArea, ProfilePic, Icons, NameArea, Status, SelectUser} from './StyledHeader.js'
 
 import phone from '../assets/phone.svg'
@@ -7,18 +9,23 @@ import hamburguer from '../assets/hamburger.svg'
 import bighead1 from '../assets/bighead-1.svg'
 
 
-export function Header () {
+export function Header (props) {
+
+    const onChangeUser = (event) => {
+        props.setUser(event.target.value)
+    }
+
     return (
         <>
         <HeaderGlobalStyle>
         <ProfileArea>
         <ProfilePic src={bighead1} alt="Imagem Perfil" />
         <NameArea>
-            <SelectUser>
-            <option value="">Lucas</option>
-            <option value="">Mary</option>
-            <option value="">Robbie</option>
-            <option value="">Me</option>
+            <SelectUser value={props.user} onChange={onChangeUser} >
+            <option value="Me">Me</option>
+            <option value="Mary">Mary</option>
+            <option value="Robbie">Robbie</option>
+            <option value="Luke">Luke</option>
             </SelectUser>
             <Status>Online</Status>
         </NameArea>
