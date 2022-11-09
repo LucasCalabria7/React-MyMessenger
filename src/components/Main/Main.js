@@ -30,7 +30,7 @@ export function Main (props) {
 
     return (
     <>
-        <GlobalStyleMain>
+        <GlobalStyleMain  >
             {cards.map((card, index) => {
                 return <Card 
                 key={index}

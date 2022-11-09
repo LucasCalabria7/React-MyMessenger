@@ -13,6 +13,7 @@ export const CardMessage = styled.section `
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    border-radius: 0.5rem;
 `
 
 export const NameUser = styled.p `

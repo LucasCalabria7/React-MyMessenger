@@ -10,6 +10,7 @@ export function Card (props) {
         <CardMessage>
             <NameUser>{props.user}</NameUser>
             <MessageUser>{props.card}</MessageUser>
+
             <BottomCard>
             <TimeSend>20:00</TimeSend>
             <TickGreen src={tickgreen} alt="tick-green" />

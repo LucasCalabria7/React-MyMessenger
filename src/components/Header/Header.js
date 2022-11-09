@@ -1,5 +1,4 @@
 import React from "react";
-import {useState} from 'react';
 
 import {HeaderGlobalStyle, ProfileArea, ButtonsArea, ProfilePic, Icons, NameArea, Status, SelectUser} from './StyledHeader.js'
 
@@ -22,7 +21,7 @@ export function Header (props) {
         <ProfilePic src={bighead1} alt="Imagem Perfil" />
         <NameArea>
             <SelectUser value={props.user} onChange={onChangeUser} >
-            <option value="Me">Me</option>
+            <option value={"Me"} >Me</option>
             <option value="Mary">Mary</option>
             <option value="Robbie">Robbie</option>
             <option value="Luke">Luke</option>
