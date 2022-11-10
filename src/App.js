@@ -26,7 +26,7 @@ const Container = styled.section `
 
 function App() {
 
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState("me")
 
   return (
   <>
