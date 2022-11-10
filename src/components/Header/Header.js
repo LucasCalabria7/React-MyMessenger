@@ -1,24 +1,31 @@
 import React from "react";
+
 import {HeaderGlobalStyle, ProfileArea, ButtonsArea, ProfilePic, Icons, NameArea, Status, SelectUser} from './StyledHeader.js'
 
 import phone from '../assets/phone.svg'
 import camera from '../assets/video-cam.svg'
 import hamburguer from '../assets/hamburger.svg'
-import bighead1 from '../assets/bighead-1.svg'
 
 
-export function Header () {
+
+export function Header (props) {
+
+    const onChangeUser = (event) => {
+        props.setUser(event.target.value)
+    }
+    
     return (
         <>
         <HeaderGlobalStyle>
         <ProfileArea>
-        <ProfilePic src={bighead1} alt="Imagem Perfil" />
+        <ProfilePic src="https://picsum.photos/200/300" alt="Imagem Perfil" />
         <NameArea>
-            <SelectUser>
-            <option value="">Lucas</option>
-            <option value="">Mary</option>
-            <option value="">Robbie</option>
-            <option value="">Me</option>
+            <SelectUser value={props.user} onChange={onChangeUser} >
+            <option value='' >Select User</option>
+            <option value='me' >Me</option>
+            <option value="Mary">Mary</option>
+            <option value="Robbie">Robbie</option>
+            <option value="Luke">Luke</option>
             </SelectUser>
             <Status>Online</Status>
         </NameArea>
