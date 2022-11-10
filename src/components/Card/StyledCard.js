@@ -20,7 +20,7 @@ export const CardMessage = styled.div `
 
 export const NameUser = styled.p `
     display: ${props => props.person === 'me' ? "none" : "inline"};
-    font-weight: 700;
+    font-weight: 600;
     margin: 0.5rem;
 `
 

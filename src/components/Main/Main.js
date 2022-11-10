@@ -13,18 +13,36 @@ export function Main (props) {
 
     const [message, setMessage] = useState("")
 
-    const [cards, setCards] = useState([])
+    const [cards, setCards] = useState([
+        {
+            id: 1,
+            user: "Luke",
+            message: "Hello World!",
+            hour: new Date().toLocaleString("pt-BR", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true
+            })
+        }
+    ])
 
     const onChangeInput = (event) => {
         setMessage(event.target.value)
     }
 
+
     const onKeyDownInput = (event) => {
         if(event.key === "Enter") {
             let copyMessage = [...cards]
             let newMessage = {
+                id: Date.now(),
                 user: props.user,
                 message: message,
+                hour: new Date().toLocaleString("pt-BR", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true
+                })
             }
 
             copyMessage.push(newMessage)
@@ -41,6 +59,8 @@ export function Main (props) {
                 return <Card 
                 key={index}
                 card={card}
+                setCards={setCards}
+                cards={cards}
                 person={card.user}
                 />
             })}
