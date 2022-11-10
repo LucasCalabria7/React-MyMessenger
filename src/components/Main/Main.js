@@ -22,8 +22,14 @@ export function Main (props) {
     const onKeyDownInput = (event) => {
         if(event.key === "Enter") {
             let copyMessage = [...cards]
-            copyMessage.push(message)
+            let newMessage = {
+                user: props.user,
+                message: message,
+            }
+
+            copyMessage.push(newMessage)
             setCards(copyMessage)
+
             setMessage("")
         }
     }
@@ -35,7 +41,7 @@ export function Main (props) {
                 return <Card 
                 key={index}
                 card={card}
-                user={props.user}
+                person={card.user}
                 />
             })}
         </GlobalStyleMain>
@@ -44,7 +50,7 @@ export function Main (props) {
             <InputMessage onKeyDown={onKeyDownInput} value={message} onChange={onChangeInput} type={"text"} placeholder="Type a message" />
             <SideIcon src={paperclip} alt="Paperclip-icon" />
             <Button ><img src={microphone} alt="Mic-Icon" /></Button>
-        </InputArea>
+        </InputArea> 
     </>
     )
 }

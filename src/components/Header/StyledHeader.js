@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderGlobalStyle = styled.section `
-    height: 10vh;
+    height: 9.5vh;
     display: flex;
     justify-content: space-between;
 `
@@ -24,7 +24,8 @@ export const ProfilePic = styled.img `
     width: 4vw;
     display: flex;
     align-items: center;
-    margin-bottom: 1.5vh;
+    margin: 1.5vh;
+    border-radius: 50%;
 `
 
 export const Icons = styled.img `
@@ -40,6 +41,7 @@ export const Icons = styled.img `
 export const NameArea = styled.div `
     font-weight: 900;
     padding-top: 1vh;
+    margin-left: 0.5vw;
 `
 
 export const Status = styled.p `
