@@ -4,7 +4,7 @@ import { useState } from 'react'
 import {GlobalStyleMain, InputArea, InputMessage, Button, SideIcon} from './StyledMain'
 import {Card} from '../Card/Card'
 
-import microphone from '../assets/microphone.svg'
+import paperplane from '../assets/paper-plane.png'
 import paperclip from '../assets/paperclip.svg'
 import smiley from '../assets/smiley.svg'
 
@@ -52,6 +52,14 @@ export function Main (props) {
         }
     }
 
+    function sendRealMessages () {
+        let getMessage = message;
+        let getNumber = prompt("This way you will send real messages for real numbers, add your number.")
+
+        let wppLink = `https://api.whatsapp.com/send?phone=55${getNumber}&text=${getMessage}`
+        window.open(wppLink)
+    }
+
     return (
     <>
         <GlobalStyleMain  >
@@ -69,7 +77,7 @@ export function Main (props) {
             <SideIcon src={smiley} alt="Smiley-Icon"/>
             <InputMessage onKeyDown={onKeyDownInput} value={message} onChange={onChangeInput} type={"text"} placeholder="Type a message" />
             <SideIcon src={paperclip} alt="Paperclip-icon" />
-            <Button ><img src={microphone} alt="Mic-Icon" /></Button>
+            <Button onClick={()=>sendRealMessages()} ><img src={paperplane} alt="Mic-Icon" /></Button>
         </InputArea> 
     </>
     )

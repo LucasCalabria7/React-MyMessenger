@@ -53,4 +53,5 @@ export const Status = styled.p `
 export const SelectUser = styled.select `
     border: none;
     font-weight: 900;
+    border-radius: 0.5rem;
 `

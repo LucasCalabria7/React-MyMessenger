@@ -23,7 +23,7 @@ export function Header (props) {
             <SelectUser value={props.user} onChange={onChangeUser} >
             <option value='' >Select User</option>
             <option value='me' >Me</option>
-            <option value="John">Mary</option>
+            <option value="John">John</option>
             <option value="Robbie">Robbie</option>
             <option value="Luke">Luke</option>
             </SelectUser>
