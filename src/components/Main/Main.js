@@ -30,7 +30,6 @@ export function Main (props) {
         setMessage(event.target.value)
     }
 
-
     const onKeyDownInput = (event) => {
         if(event.key === "Enter") {
             let copyMessage = [...cards]
@@ -60,6 +59,7 @@ export function Main (props) {
         window.open(wppLink)
     }
 
+    
     return (
     <>
         <GlobalStyleMain  >
